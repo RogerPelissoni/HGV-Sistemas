@@ -1,4 +1,5 @@
 <?php
+//Endereço do site
 define('INCLUDE_PATH','http://localhost/projetoHGVsistemas/');
 //Variáveis de conexão
 define('HOST','localhost');

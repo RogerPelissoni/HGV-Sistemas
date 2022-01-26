@@ -10,7 +10,7 @@
     <h2>Lista de endereços cadastrados</h2>
 </div>
 <a href="pages/cadastrarEndereco.php"><input class="addCitiesBtn" type="button" value="Cadastrar novo endereço"></a>
-
+<div class="tbContainer">
 <table class="tbCidades">
     <caption>Tabela de endereços dos clientes</caption>
     <thead>
@@ -62,7 +62,7 @@
         <?php } ?>
     </tbody>
 </table>
-
+</div>
 <div class="paginator">
     <?php
     if (!isset($_POST['parametro'])) {
