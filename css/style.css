@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 60px;
+}
+a{
+    text-decoration: none;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    min-height: 94vh;
+    background-color: #b0bec5;
+}
+.greyBG{
+    display: none;
+    width: 100vw;
+    height: 100%;
+    opacity: 70%;
+    background-color: grey;
+    position: absolute;
+    z-index: 2;
+}
+.top{
+    width: 100%;
+    height: 80px;
+    background-color: #0a4a75;
+    margin-bottom: 20px;
+}
+.logo{
+    width: 350px;
+    height: 80px;
+    display: flex;
+}
+.logo a{
+    text-decoration: none;
+    color: white;
+}
+.logo img{
+    width: 80px;
+    height: 80px;
+}
+.logo h2{
+    padding: 25px;
+}
+.btnHome{
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+}
+.btnHome a{
+    text-decoration: none;
+    color: white;
+}
+.btnHome a:hover{
+    color: #2596be;
+}
+/*Menu de navegação entre páginas*/
+.nav-menu{
+    padding-left:20px;
+}
+.nav-menu a{
+    padding: 10px;
+    text-decoration: none;
+}
+.nav-menu-active{
+    color: #0a4a75;
+}
+.nav-menu-active:hover{
+    color: #06273d;
+}
+.nav-menu-disabled{
+    color: #2596be;
+    cursor: default;
+}
+.title h2{
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: #b0bec5;
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+.title .line{
+    width: 96%;
+    height: 5px;
+    border: 5px solid #2596be;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+.addCitiesBtn,
+.formAddress input[type=submit]{
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+    display: block;
+    background-color: #5cb85c;
+    padding: 10px;
+    font-size: 30px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.btnContainer{
+    padding: 20px;
+}
+.addCitiesBtn:hover,
+.formAddress input[type=submit]:hover{
+    background-color: #6dda6d;
+}
+.invalidoAvisoCidade,.invalidoAvisoCEP,.invalidoAvisoUF{
+    display: none;
+    padding: 10px 0 0 20px;
+    color: red;
+}
+/*Estilização da tabela*/
+.tbCidades{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 100px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #666;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: -8px;
+}
+.tbCidades td {
+    margin: 10px;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.tbCidades td:hover{
+    background-color: rgb(202, 202, 202);
+}
+.tbCidades caption{
+    margin: 0 auto;
+    background-color: #2596be;
+    width: 100%;
+    height: 60px;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 5px 5px 0 0;
+}
+.tbCidades tr th{
+    border: 1px solid white;
+    background-color:#2596be;
+    padding: 15px;
+}
+.tbCidades tr{
+    text-align: center;
+}
+.tbCidades tr th:nth-child(4),
+.tbCidades tr th:nth-child(5){
+    width: 20px;
+}
+.btnDel{
+    cursor: pointer;
+    text-decoration: none;
+    color: red;
+}
+.fa-pencil-alt{
+    text-decoration: none;
+    color: black
+}
+/* Início da estilização da página de cadastro de endereços */
+.formAddress{
+    width: 80%;
+    border: 2px solid #0a4a75;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.formAddress h2{
+    padding: 20px;
+    font-weight: 500;
+    background-color: #2596be;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.formAddress label{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    top: 6px;
+}
+.formAddress input[type=text]{
+    font-size: 18px;
+    padding: 15px;
+    width: 96%;
+    display: block;
+    margin: 8px auto;
+    border: 0;
+    border-radius: 5px;
+}
+/*Modal de alerta de sucesso*/
+.modalSuccess, .modalEdit{
+    display: none;
+    width: 60%;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+}
+.modalSuccess h2, .modalEdit h2{
+    padding-bottom: 20px;
+}
+.modalSuccess p:nth-child(1):hover,
+.modalEdit p:nth-child(1):hover{
+    background-color: #2596be;
+    color: white;
+}
+.modalSuccess h2 i, .modalEdit h2 i{
+    color: green;
+    font-size: 30px;
+}
+.modalSuccess .modalLink, .modalEdit .modalLink{
+    margin: 15px 0 15px 0;
+    border: 1px solid #0a4a75;
+}
+.modalReturn i{
+    color:#0a4a75;
+    font-size: 28px;
+    padding: 8px;
+}
+.modalReturn a{
+    text-decoration: none;
+    color: black;
+}
+.modalLink{
+    width: 100%;
+    padding: 2px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.closeModal{
+    margin: 0 auto;
+    width: 40%;
+    border: 3px solid red;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.closeModal i{
+    color: red;
+    font-size: 30px;
+}
+.closeModal:hover{
+    background-color: red;
+}
+.modalSuccess p:hover .fa-times, .modalEdit p:hover .fa-times,
+.closeModal:hover{
+    color: white;
+}
+/*Modal de confirmação de exclusão*/
+.delConfirm{
+    display: none;
+    width: 70%;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+}
+.delConfirm p{
+    font-size: 24px;
+    padding-top: 15px;
+}
+/*Paginador*/
+.paginator{
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+}
+.active-page{
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.705);
+    cursor: default;
+}
+.no-active-page{
+    border-radius: 2px;
+    background-color: #2595be8f;
+    padding: 10px;
+    color: #0a4a75;
+    cursor: pointer;
+}
+/*Estilização Footer*/
+footer{
+    width: 100%;
+    height: 60px;
+    background-color: #0a4a75;
+    position: absolute;
+    bottom:0;
+}
+footer h2{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 17px;
+}
